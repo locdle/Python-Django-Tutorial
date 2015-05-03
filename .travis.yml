@@ -1,6 +1,7 @@
 language: python
 python:
   - "2.7"
+services: mysql
 env:
   - DJANGO=1.8
 install:
@@ -10,7 +11,9 @@ install:
   - pip install https://github.com/dcramer/pyflakes/tarball/master
   - pip install mysql-python
 #  - pip install -q -e . --use-mirrors
-#before_script:
+before_script:
+  - mysql -e 'create database djangotutorial;'
+  - python manage.py syncdb --noinput
 #  - "pep8 --exclude=migrations --ignore=E501,E225 src"
 #  - pyflakes -x W src
 script:

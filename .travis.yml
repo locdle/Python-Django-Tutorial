@@ -12,8 +12,8 @@ install:
   - pip install https://github.com/dcramer/pyflakes/tarball/master
   - pip install mysql-python --use-mirrors
 before_script:
-  - mysql -e 'create database IF NOT EXISTS travis_ci_db;;' -uroot
-  - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'travis'@'localhost';" -uroot
+  - mysql -e 'create database IF NOT EXISTS djangotutorial;' -uroot
+  - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';" -uroot
   - python manage.py migrate
 
 #  - mysql -e 'create database travis_ci_db;'
@@ -21,4 +21,6 @@ before_script:
 #  - "pep8 --exclude=migrations --ignore=E501,E225 src"
 #  - pyflakes -x W src
 script:
-  - python manage.py test polls
+  - python manage.py test
+notifications:
+  email: false

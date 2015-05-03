@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'polls',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,7 +64,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'polls'
             ],
         },
     },
@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangotutorial',
-        'USER': 'root',
-        'PASSWORD': '',
+        'USER': 'django',
+        'PASSWORD': 'acura3979',
         'HOST': '',   # Or an IP Address that your DB is hosted on
         'PORT': '',
     }

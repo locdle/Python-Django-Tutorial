@@ -9,4 +9,4 @@ install:
   - pip install pep8 --use-mirrors
   - pip install https://github.com/dcramer/pyflakes/tarball/master
 script:
-  - python setup.py test
+  - python manage.py test

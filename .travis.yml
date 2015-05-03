@@ -12,8 +12,8 @@ install:
   - pip install https://github.com/dcramer/pyflakes/tarball/master
   - pip install mysql-python --use-mirrors
 before_script:
-  - mysql -e 'create database IF NOT EXISTS djangotutorial;' -udjango
-  - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'django'@'localhost';" -udjango
+  - mysql -e 'create database IF NOT EXISTS djangotutorial;' -uroot
+  - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'django'@'localhost';" -uroot
   - python manage.py migrate
 
 script:
